@@ -1,0 +1,195 @@
+@use './components' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Red Hat Display', sans-serif;
+	width: 100%;
+}
+
+h1 {
+	font-size: 40px;
+	line-height: 44px;
+	font-weight: 900;
+	color: $dark;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 36px;
+	font-weight: 900;
+	color: $dark;
+}
+
+p {
+	font-size: 16px;
+	line-height: 26px;
+	color: $gray;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	&__logo {
+		margin-top: 48px;
+	}
+
+	&__hero-left {
+		margin: 50px 0;
+		width: 100%;
+		height: 153px;
+		background: url('../assets/tablet/image-hero.png') center/110% no-repeat;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		position: relative;
+		width: 330px;
+		height: 400px;
+	}
+}
+
+.btn {
+	margin: 10px;
+	padding: 20px 40px;
+	height: 58px;
+	border: none;
+	border-radius: 30px;
+	font-family: inherit;
+	font-size: 16px;
+	font-weight: 900;
+	color: $light;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	z-index: 1;
+
+	span {
+		opacity: 0.7;
+	}
+}
+
+.blue {
+	background-color: $blue;
+
+	&:hover {
+		background-color: $lightblue;
+	}
+}
+
+.violet {
+	background-color: $violet;
+
+	&:hover {
+		background-color: $lightviolet;
+	}
+}
+
+.number {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-top: 100px;
+	width: 56px;
+	height: 56px;
+	font-weight: bold;
+	background-color: $white;
+	border: 1px solid rgba(135, 135, 157, 0.25);
+	border-radius: 50%;
+	z-index: 2;
+
+	&::before {
+		position: absolute;
+		width: 1px;
+		height: 84px;
+		content: '';
+		background-color: rgba(135, 135, 157, 0.25);
+		bottom: 55px;
+		left: 50%;
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	&__image-box {
+		margin: 50px 0;
+
+		img {
+			margin: 10px;
+			width: 151px;
+			border-radius: 8px;
+		}
+	}
+
+	&__overline {
+		text-transform: uppercase;
+		font-weight: 900;
+		letter-spacing: 4px;
+		color: $blue;
+	}
+
+	&__heading,
+	&__text {
+		margin: 26px;
+	}
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-top: 126px;
+	height: 428px;
+	text-align: center;
+	background: url('../assets/mobile/image-footer.jpg') bottom center/cover
+		no-repeat;
+	z-index: 0;
+
+	&::before {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		content: '';
+		background-color: $blue;
+		opacity: 0.9;
+		z-index: 1;
+	}
+
+	&__heading,
+	&__text {
+		margin: 20px 32px;
+		color: $light;
+		z-index: 2;
+	}
+
+	&__text {
+		font-size: 18px;
+	}
+}
+
+.footer-padding {
+	position: absolute;
+	top: -126px;
+}
+
+@import './desktop';
